@@ -185,7 +185,7 @@ namespace Panosen.CodeDom.Tag.Basic
         /// <summary>
         /// 添加一批子节点
         /// </summary>
-        public static TBasicComponent AddChildren<TBasicComponent,TChildComponent>(this TBasicComponent component, List<Component> components)
+        public static TBasicComponent AddChildren<TBasicComponent>(this TBasicComponent component, List<Component> components)
             where TBasicComponent : BasicComponent
         {
             if (components == null || components.Count == 0)
