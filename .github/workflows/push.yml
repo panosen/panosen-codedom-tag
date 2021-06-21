@@ -1,0 +1,35 @@
+name: push
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore -c Release
+    - name: Test
+      run: dotnet test
+    - name: Publish Nuget Panosen.CodeDom.Tag
+      run: dotnet nuget push Panosen.CodeDom.Tag/bin/Release/Panosen.CodeDom.Tag.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.PANOSEN_NUGET_API_KEY}} --skip-duplicate
+    - name: Publish Nuget Panosen.CodeDom.Tag.Engine
+      run: dotnet nuget push Panosen.CodeDom.Tag.Engine/bin/Release/Panosen.CodeDom.Tag.Engine.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.PANOSEN_NUGET_API_KEY}} --skip-duplicate
+    - name: Publish Nuget Panosen.CodeDom.Tag.Basic
+      run: dotnet nuget push Panosen.CodeDom.Tag.Basic/bin/Release/Panosen.CodeDom.Tag.Basic.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.PANOSEN_NUGET_API_KEY}} --skip-duplicate
+    - name: Publish Nuget Panosen.CodeDom.Tag.Basic.Engine
+      run: dotnet nuget push Panosen.CodeDom.Tag.Basic.Engine/bin/Release/Panosen.CodeDom.Tag.Basic.Engine.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.PANOSEN_NUGET_API_KEY}} --skip-duplicate
+    - name: Publish Nuget Panosen.CodeDom.Tag.Script
+      run: dotnet nuget push Panosen.CodeDom.Tag.Script/bin/Release/Panosen.CodeDom.Tag.Script.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.PANOSEN_NUGET_API_KEY}} --skip-duplicate
+    - name: Publish Nuget Panosen.CodeDom.Tag.Script.Engine
+      run: dotnet nuget push Panosen.CodeDom.Tag.Script.Engine/bin/Release/Panosen.CodeDom.Tag.Script.Engine.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.PANOSEN_NUGET_API_KEY}} --skip-duplicate
