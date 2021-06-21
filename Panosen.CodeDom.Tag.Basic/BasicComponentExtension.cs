@@ -147,8 +147,7 @@ namespace Panosen.CodeDom.Tag.Basic
         /// <summary>
         /// new一个子节点，添加为子节点，返回该子节点
         /// </summary>
-        public static TChildComponent AddChild<TBasicComponent, TChildComponent>(this TBasicComponent component, string childComponentName = null)
-            where TBasicComponent : BasicComponent
+        public static TChildComponent AddChild<TChildComponent>(this BasicComponent component, string childComponentName = null)
             where TChildComponent : Component, new()
         {
             if (component.Children == null)
@@ -170,9 +169,8 @@ namespace Panosen.CodeDom.Tag.Basic
         /// <summary>
         /// 添加一个子节点
         /// </summary>
-        public static void AddChild<TBasicComponent, TChildComponent>(this TBasicComponent component, TChildComponent childComponent)
+        public static TBasicComponent AddChild<TBasicComponent>(this TBasicComponent component, Component childComponent)
             where TBasicComponent : BasicComponent
-            where TChildComponent : Component
         {
             if (component.Children == null)
             {
@@ -180,18 +178,19 @@ namespace Panosen.CodeDom.Tag.Basic
             }
 
             component.Children.Add(childComponent);
+
+            return component;
         }
 
         /// <summary>
         /// 添加一批子节点
         /// </summary>
-        public static void AddChildren<TBasicComponent,TChildComponent>(this TBasicComponent component, List<TChildComponent> components)
+        public static TBasicComponent AddChildren<TBasicComponent,TChildComponent>(this TBasicComponent component, List<Component> components)
             where TBasicComponent : BasicComponent
-            where TChildComponent : Component
         {
             if (components == null || components.Count == 0)
             {
-                return;
+                return component;
             }
 
             if (component.Children == null)
@@ -200,6 +199,8 @@ namespace Panosen.CodeDom.Tag.Basic
             }
 
             component.Children.AddRange(components);
+
+            return component;
         }
     }
 }
