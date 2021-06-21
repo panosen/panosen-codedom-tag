@@ -79,6 +79,11 @@ namespace Panosen.CodeDom.Tag.Engine
         /// </summary>
         public Dictionary<Type, ComponentEngine> ComponentEngineMap { get; } = new Dictionary<Type, ComponentEngine>();
 
+        /// <summary>
+        /// GetComponentEngine
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public ComponentEngine GetComponentEngine(Type type)
         {
             if (!ComponentEngineMap.ContainsKey(type))

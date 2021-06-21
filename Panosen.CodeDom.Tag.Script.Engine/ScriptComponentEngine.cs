@@ -7,6 +7,9 @@ using Panosen.CodeDom.Tag.Engine;
 
 namespace Panosen.CodeDom.Tag.Script
 {
+    /// <summary>
+    /// ScriptComponentEngine
+    /// </summary>
     public class ScriptComponentEngine : ComponentEngine<ScriptComponent>
     {
 

@@ -6,14 +6,33 @@ using System.Threading.Tasks;
 
 namespace Panosen.CodeDom.Tag.Engine
 {
+    /// <summary>
+    /// ComponentEngine
+    /// </summary>
     public abstract class ComponentEngine
     {
+        /// <summary>
+        /// Generate
+        /// </summary>
+        /// <param name="component"></param>
+        /// <param name="codeWriter"></param>
+        /// <param name="options"></param>
         public abstract void Generate(Component component, CodeWriter codeWriter, GenerateOptions options);
     }
 
+    /// <summary>
+    /// ComponentEngine
+    /// </summary>
+    /// <typeparam name="TComponent"></typeparam>
     public abstract class ComponentEngine<TComponent> : ComponentEngine
         where TComponent : Component
     {
+        /// <summary>
+        /// Generate
+        /// </summary>
+        /// <param name="component"></param>
+        /// <param name="codeWriter"></param>
+        /// <param name="options"></param>
         public sealed override void Generate(Component component, CodeWriter codeWriter, GenerateOptions options)
         {
             var tComponent = component as TComponent;
@@ -28,11 +47,16 @@ namespace Panosen.CodeDom.Tag.Engine
         /// <summary>
         /// GenerateComponents
         /// </summary>
-        /// <param name="components"></param>
+        /// <param name="component"></param>
         /// <param name="codeWriter"></param>
         /// <param name="options"></param>
         public abstract void OnGenerate(TComponent component, CodeWriter codeWriter, GenerateOptions options);
 
+        /// <summary>
+        /// GenerateAttributes
+        /// </summary>
+        /// <param name="component"></param>
+        /// <param name="codeWriter"></param>
         protected void GenerateAttributes(Component component, CodeWriter codeWriter)
         {
             if (component.AttributeSet == null || component.AttributeSet.Count == 0)
@@ -46,6 +70,11 @@ namespace Panosen.CodeDom.Tag.Engine
             }
         }
 
+        /// <summary>
+        /// GenerateProperties
+        /// </summary>
+        /// <param name="component"></param>
+        /// <param name="codeWriter"></param>
         protected void GenerateProperties(Component component, CodeWriter codeWriter)
         {
             if (component.PropertyMap == null || component.PropertyMap.Count == 0)

@@ -11,6 +11,12 @@ namespace Panosen.CodeDom.Tag.Engine
     /// </summary>
     public class TagEngine
     {
+        /// <summary>
+        /// Generate
+        /// </summary>
+        /// <param name="component"></param>
+        /// <param name="codeWriter"></param>
+        /// <param name="options"></param>
         public void Generate(Component component, CodeWriter codeWriter, GenerateOptions options = null)
         {
             if (component == null) { return; }
@@ -25,9 +31,15 @@ namespace Panosen.CodeDom.Tag.Engine
 
             var engine = options.ComponentEngineMap[component.GetType()];
 
-            
+            engine.Generate(component, codeWriter, options);
         }
 
+        /// <summary>
+        /// Generate
+        /// </summary>
+        /// <param name="components"></param>
+        /// <param name="codeWriter"></param>
+        /// <param name="options"></param>
         public void Generate(List<Component> components, CodeWriter codeWriter, GenerateOptions options = null)
         {
             if (components == null) { return; }

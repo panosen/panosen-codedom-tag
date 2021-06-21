@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace Panosen.CodeDom.Tag.Basic.Engine
 {
+    /// <summary>
+    /// BasicComponentEngine
+    /// </summary>
     public class BasicComponentEngine : ComponentEngine<BasicComponent>
     {
 
@@ -94,6 +97,11 @@ namespace Panosen.CodeDom.Tag.Basic.Engine
             }
         }
 
+        /// <summary>
+        /// GenerateCss
+        /// </summary>
+        /// <param name="basicComponent"></param>
+        /// <param name="codeWriter"></param>
         protected void GenerateCss(BasicComponent basicComponent, CodeWriter codeWriter)
         {
             if (basicComponent.CssClassSet == null || basicComponent.CssClassSet.Count == 0)

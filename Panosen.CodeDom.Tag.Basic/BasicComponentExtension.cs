@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Panosen.CodeDom.Tag.Basic
 {
+    /// <summary>
+    /// BasicComponentExtension
+    /// </summary>
     public static class BasicComponentExtension
     {
         /// <summary>
@@ -144,10 +147,6 @@ namespace Panosen.CodeDom.Tag.Basic
         /// <summary>
         /// new一个子节点，添加为子节点，返回该子节点
         /// </summary>
-        /// <typeparam name="TChildComponent"></typeparam>
-        /// <param name="component"></param>
-        /// <param name="childComponentName"></param>
-        /// <returns></returns>
         public static TChildComponent AddChild<TBasicComponent, TChildComponent>(this TBasicComponent component, string childComponentName = null)
             where TBasicComponent : BasicComponent
             where TChildComponent : Component, new()
@@ -171,10 +170,6 @@ namespace Panosen.CodeDom.Tag.Basic
         /// <summary>
         /// 添加一个子节点
         /// </summary>
-        /// <typeparam name="TChildComponent"></typeparam>
-        /// <param name="component"></param>
-        /// <param name="childComponent"></param>
-        /// <returns></returns>
         public static void AddChild<TBasicComponent, TChildComponent>(this TBasicComponent component, TChildComponent childComponent)
             where TBasicComponent : BasicComponent
             where TChildComponent : Component
@@ -190,10 +185,6 @@ namespace Panosen.CodeDom.Tag.Basic
         /// <summary>
         /// 添加一批子节点
         /// </summary>
-        /// <typeparam name="TChildComponent"></typeparam>
-        /// <param name="component"></param>
-        /// <param name="components"></param>
-        /// <returns></returns>
         public static void AddChildren<TBasicComponent,TChildComponent>(this TBasicComponent component, List<TChildComponent> components)
             where TBasicComponent : BasicComponent
             where TChildComponent : Component
