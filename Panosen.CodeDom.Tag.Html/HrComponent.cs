@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Panosen.CodeDom.Tag.Html
+{
+    /// <summary>
+    /// HrComponent
+    /// </summary>
+    public class HrComponent : HtmlComponent
+    {
+        /// <summary>
+        /// Name
+        /// </summary>
+        public override string Name { get; set; } = "hr";
+
+        /// <summary>
+        /// SelfClosing
+        /// </summary>
+        public override bool SelfClosing { get; set; } = true;
+    }
+}
