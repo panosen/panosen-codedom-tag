@@ -1,7 +1,6 @@
 ﻿using System;
 
 using Panosen.CodeDom.JavaScript;
-using Panosen.CodeDom.Tag.Engine;
 
 namespace Panosen.CodeDom.Tag.Script
 {

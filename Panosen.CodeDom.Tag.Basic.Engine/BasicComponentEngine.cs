@@ -108,7 +108,7 @@ namespace Panosen.CodeDom.Tag.Basic.Engine
             {
                 return;
             }
-            codeWriter.Write(" class=").Write(Marks.DOUBLE_QUOTATION).Write(string.Join(Marks.WHITESPACE, basicComponent.CssClassSet)).Write(Marks.DOUBLE_QUOTATION);
+            codeWriter.Write(Marks.WHITESPACE).Write("class").Write(Marks.EQUAL).Write(Marks.DOUBLE_QUOTATION).Write(string.Join(Marks.WHITESPACE, basicComponent.CssClassSet)).Write(Marks.DOUBLE_QUOTATION);
         }
 
         private void GenerateChildren(List<Component> components, CodeWriter codeWriter, bool padding, GenerateOptions options)
@@ -128,7 +128,7 @@ namespace Panosen.CodeDom.Tag.Basic.Engine
             {
                 codeWriter.WriteLine();
 
-                var engine = options.GetComponentEngine(component.GetType());
+                var engine = options.GetComponentEngine(component);
                 if (engine == null)
                 {
                     continue;

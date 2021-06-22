@@ -17,6 +17,11 @@ namespace Panosen.CodeDom.Tag.Engine
         private int indentSize = 0;
 
         /// <summary>
+        /// ComponentEngineMap
+        /// </summary>
+        public Dictionary<Type, ComponentEngine> ComponentEngineMap { get; set; }
+
+        /// <summary>
         /// 缩进个数
         /// </summary>
         public int IndentSize
@@ -73,25 +78,58 @@ namespace Panosen.CodeDom.Tag.Engine
             }
             this.IndentString = builder.ToString();
         }
+    }
 
+    /// <summary>
+    /// GenerateOptionsExtension
+    /// </summary>
+    public static class GenerateOptionsExtension
+    {
         /// <summary>
-        /// 自定义的ComponentEngine
+        /// AddTagEngine
         /// </summary>
-        public Dictionary<Type, ComponentEngine> ComponentEngineMap { get; } = new Dictionary<Type, ComponentEngine>();
-
-        /// <summary>
-        /// GetComponentEngine
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public ComponentEngine GetComponentEngine(Type type)
+        /// <typeparam name="TComponent"></typeparam>
+        /// <param name="options"></param>
+        /// <param name="tagEngine"></param>
+        public static GenerateOptions AddComponentEngine<TComponent>(this GenerateOptions options, ComponentEngine tagEngine)
+            where TComponent : Component
         {
-            if (!ComponentEngineMap.ContainsKey(type))
+            var type = typeof(TComponent);
+
+            if (options.ComponentEngineMap == null)
+            {
+                options.ComponentEngineMap = new Dictionary<Type, ComponentEngine>();
+            }
+
+            if (options.ComponentEngineMap.ContainsKey(type))
+            {
+                return options;
+            }
+
+            options.ComponentEngineMap.Add(type, tagEngine);
+
+            return options;
+        }
+
+        /// <summary>
+        /// GetTagEngine
+        /// </summary>
+        /// <param name="options"></param>
+        /// <param name="component"></param>
+        /// <returns></returns>
+        public static ComponentEngine GetComponentEngine(this GenerateOptions options, Component component)
+        {
+            if (options.ComponentEngineMap == null)
             {
                 return null;
             }
 
-            return ComponentEngineMap[type];
+            if (!options.ComponentEngineMap.ContainsKey(component.GetType()))
+            {
+                return null;
+            }
+
+            return options.ComponentEngineMap[component.GetType()];
         }
     }
 }
