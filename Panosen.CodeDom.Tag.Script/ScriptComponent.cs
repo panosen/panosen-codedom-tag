@@ -19,4 +19,26 @@ namespace Panosen.CodeDom.Tag.Script
         /// </summary>
         public JsCodeFile CodeFile { get; set; }
     }
+
+    /// <summary>
+    /// ScriptComponent
+    /// </summary>
+    public static class ScriptComponentExtension
+    {
+        /// <summary>
+        /// AddCodeFile
+        /// </summary>
+        /// <typeparam name="TScriptComponent"></typeparam>
+        /// <param name="scriptComponent"></param>
+        /// <returns></returns>
+        public static JsCodeFile AddCodeFile<TScriptComponent>(TScriptComponent scriptComponent)
+            where TScriptComponent : ScriptComponent
+        {
+            JsCodeFile jsCodeFile = new JsCodeFile();
+
+            scriptComponent.CodeFile = jsCodeFile;
+
+            return jsCodeFile;
+        }
+    }
 }
