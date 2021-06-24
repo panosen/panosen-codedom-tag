@@ -119,17 +119,26 @@ namespace Panosen.CodeDom.Tag.Engine
         /// <returns></returns>
         public static ComponentEngine GetComponentEngine(this GenerateOptions options, Component component)
         {
-            if (options.ComponentEngineMap == null)
+            if (options.ComponentEngineMap == null || options.ComponentEngineMap.Count == 0)
             {
                 return null;
             }
 
-            if (!options.ComponentEngineMap.ContainsKey(component.GetType()))
+            if (options.ComponentEngineMap.ContainsKey(component.GetType()))
             {
-                return null;
+                return options.ComponentEngineMap[component.GetType()];
             }
 
-            return options.ComponentEngineMap[component.GetType()];
+            foreach (var item in options.ComponentEngineMap)
+            {
+                var engine = item.Value;
+                if (engine.GetType().BaseType.GetGenericArguments()[0].IsAssignableFrom(component.GetType()))
+                {
+                    return engine;
+                }
+            }
+
+            return null;
         }
     }
 }
