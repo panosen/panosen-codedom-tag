@@ -70,61 +70,6 @@ namespace Panosen.CodeDom.Tag.Basic
         }
 
         /// <summary>
-        /// 添加一个属性
-        /// </summary>
-        /// <typeparam name="TBasicComponent"></typeparam>
-        /// <param name="component"></param>
-        /// <param name="propertyKey"></param>
-        /// <param name="propertyValue"></param>
-        /// <returns></returns>
-        public static TBasicComponent AddProperty<TBasicComponent>(this TBasicComponent component, string propertyKey, int propertyValue)
-            where TBasicComponent : BasicComponent
-        {
-            return AddProperty(component, propertyKey, propertyValue.ToString());
-        }
-
-        /// <summary>
-        /// 添加一个属性
-        /// </summary>
-        /// <typeparam name="TBasicComponent"></typeparam>
-        /// <param name="component"></param>
-        /// <param name="propertyKey"></param>
-        /// <param name="propertyValue"></param>
-        /// <returns></returns>
-        public static TBasicComponent AddProperty<TBasicComponent>(this TBasicComponent component, string propertyKey, string propertyValue)
-            where TBasicComponent : BasicComponent
-        {
-            if (component.PropertyMap == null)
-            {
-                component.PropertyMap = new Dictionary<string, string>();
-            }
-
-            component.PropertyMap[propertyKey] = propertyValue;
-
-            return component;
-        }
-
-        /// <summary>
-        /// 添加一个特性
-        /// </summary>
-        /// <typeparam name="TBasicComponent"></typeparam>
-        /// <param name="component"></param>
-        /// <param name="attribute"></param>
-        /// <returns></returns>
-        public static TBasicComponent AddAttribute<TBasicComponent>(this TBasicComponent component, string attribute)
-            where TBasicComponent : BasicComponent
-        {
-            if (component.AttributeSet == null)
-            {
-                component.AttributeSet = new HashSet<string>();
-            }
-
-            component.AttributeSet.Add(attribute);
-
-            return component;
-        }
-
-        /// <summary>
         /// 添加一个css样式
         /// </summary>
         /// <typeparam name="TBasicComponent"></typeparam>

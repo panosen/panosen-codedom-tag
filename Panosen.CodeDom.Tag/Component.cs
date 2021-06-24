@@ -64,5 +64,60 @@ namespace Panosen.CodeDom.Tag
 
             return component;
         }
+
+        /// <summary>
+        /// 添加一个属性
+        /// </summary>
+        /// <typeparam name="TComponent"></typeparam>
+        /// <param name="component"></param>
+        /// <param name="propertyKey"></param>
+        /// <param name="propertyValue"></param>
+        /// <returns></returns>
+        public static TComponent AddProperty<TComponent>(this TComponent component, string propertyKey, int propertyValue)
+            where TComponent : Component
+        {
+            return AddProperty(component, propertyKey, propertyValue.ToString());
+        }
+
+        /// <summary>
+        /// 添加一个属性
+        /// </summary>
+        /// <typeparam name="TComponent"></typeparam>
+        /// <param name="component"></param>
+        /// <param name="propertyKey"></param>
+        /// <param name="propertyValue"></param>
+        /// <returns></returns>
+        public static TComponent AddProperty<TComponent>(this TComponent component, string propertyKey, string propertyValue)
+            where TComponent : Component
+        {
+            if (component.PropertyMap == null)
+            {
+                component.PropertyMap = new Dictionary<string, string>();
+            }
+
+            component.PropertyMap[propertyKey] = propertyValue;
+
+            return component;
+        }
+
+        /// <summary>
+        /// 添加一个特性
+        /// </summary>
+        /// <typeparam name="TComponent"></typeparam>
+        /// <param name="component"></param>
+        /// <param name="attribute"></param>
+        /// <returns></returns>
+        public static TComponent AddAttribute<TComponent>(this TComponent component, string attribute)
+            where TComponent : Component
+        {
+            if (component.AttributeSet == null)
+            {
+                component.AttributeSet = new HashSet<string>();
+            }
+
+            component.AttributeSet.Add(attribute);
+
+            return component;
+        }
     }
 }
