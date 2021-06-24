@@ -31,7 +31,7 @@ namespace Panosen.CodeDom.Tag.Script
         /// <typeparam name="TScriptComponent"></typeparam>
         /// <param name="scriptComponent"></param>
         /// <returns></returns>
-        public static JsCodeFile AddCodeFile<TScriptComponent>(TScriptComponent scriptComponent)
+        public static JsCodeFile AddCodeFile<TScriptComponent>(this TScriptComponent scriptComponent)
             where TScriptComponent : ScriptComponent
         {
             JsCodeFile jsCodeFile = new JsCodeFile();
