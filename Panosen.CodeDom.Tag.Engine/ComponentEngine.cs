@@ -35,8 +35,7 @@ namespace Panosen.CodeDom.Tag.Engine
         /// <param name="options"></param>
         public sealed override void Generate(Component component, CodeWriter codeWriter, GenerateOptions options)
         {
-            var tComponent = component as TComponent;
-            if (tComponent == null)
+            if (!(component is TComponent tComponent))
             {
                 throw new ArgumentException($"component should be instance of `{typeof(TComponent).FullName}`");
             }

@@ -1,7 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Panosen.CodeDom.JavaScript;
-using Panosen.CodeDom.Tag.Basic;
-using Panosen.CodeDom.Tag.Basic.Engine;
 using Panosen.CodeDom.Tag.Engine;
 using Panosen.CodeDom.Tag.Script;
 using Panosen.CodeDom.Tag.Script.Engine;
@@ -24,8 +22,7 @@ namespace Panosen.CodeDom.Tag.Core.MSTest
             var builder = new StringBuilder();
 
             var options = new GenerateOptions()
-                .AddComponentEngine<BasicComponent>(new BasicComponentEngine())
-                .AddComponentEngine<ScriptComponent>(new ScriptComponentEngine());
+                .AddComponentEngine(new ScriptComponentEngine());
 
             new TagEngineCore().Generate(component, builder, options);
 
@@ -36,7 +33,7 @@ namespace Panosen.CodeDom.Tag.Core.MSTest
             Assert.AreEqual(expected, actual);
         }
 
-        private string PrepareExpected()
+        private static string PrepareExpected()
         {
             return @"<div>
     <p>this is a test.</p>
@@ -46,7 +43,7 @@ namespace Panosen.CodeDom.Tag.Core.MSTest
 </div>";
         }
 
-        private Component PrepareComponent()
+        private static Component PrepareComponent()
         {
             var component = new BasicComponent();
 
@@ -58,7 +55,7 @@ namespace Panosen.CodeDom.Tag.Core.MSTest
             return component;
         }
 
-        private JsCodeFile PrepareJsCodeFile()
+        private static JsCodeFile PrepareJsCodeFile()
         {
             var jsCodeFile = new JavaScript.JsCodeFile();
 

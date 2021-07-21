@@ -19,7 +19,7 @@ namespace Panosen.CodeDom.Tag.Engine
         /// <summary>
         /// ComponentEngineMap
         /// </summary>
-        public Dictionary<Type, ComponentEngine> ComponentEngineMap { get; set; }
+        public List<ComponentEngine> ComponentEngineList { get; set; }
 
         /// <summary>
         /// 缩进个数
@@ -47,7 +47,7 @@ namespace Panosen.CodeDom.Tag.Engine
         /// </summary>
         public void PushIndent()
         {
-            this.indentSize = this.indentSize + 1;
+            this.indentSize++;
 
             BuildIndentString();
         }
@@ -59,7 +59,7 @@ namespace Panosen.CodeDom.Tag.Engine
         {
             if (this.indentSize > 0)
             {
-                this.indentSize = this.indentSize - 1;
+                this.indentSize--;
             }
 
             BuildIndentString();
@@ -85,28 +85,19 @@ namespace Panosen.CodeDom.Tag.Engine
     /// </summary>
     public static class GenerateOptionsExtension
     {
+        private static readonly BasicComponentEngine basicComponentEngine = new BasicComponentEngine();
+
         /// <summary>
         /// AddTagEngine
         /// </summary>
-        /// <typeparam name="TComponent"></typeparam>
-        /// <param name="options"></param>
-        /// <param name="tagEngine"></param>
-        public static GenerateOptions AddComponentEngine<TComponent>(this GenerateOptions options, ComponentEngine tagEngine)
-            where TComponent : Component
+        public static GenerateOptions AddComponentEngine(this GenerateOptions options, ComponentEngine componentEngine)
         {
-            var type = typeof(TComponent);
-
-            if (options.ComponentEngineMap == null)
+            if (options.ComponentEngineList == null)
             {
-                options.ComponentEngineMap = new Dictionary<Type, ComponentEngine>();
+                options.ComponentEngineList = new List<ComponentEngine>();
             }
 
-            if (options.ComponentEngineMap.ContainsKey(type))
-            {
-                return options;
-            }
-
-            options.ComponentEngineMap.Add(type, tagEngine);
+            options.ComponentEngineList.Add(componentEngine);
 
             return options;
         }
@@ -119,23 +110,20 @@ namespace Panosen.CodeDom.Tag.Engine
         /// <returns></returns>
         public static ComponentEngine GetComponentEngine(this GenerateOptions options, Component component)
         {
-            if (options.ComponentEngineMap == null || options.ComponentEngineMap.Count == 0)
+            if (options.ComponentEngineList != null && options.ComponentEngineList.Count != 0)
             {
-                return null;
-            }
-
-            if (options.ComponentEngineMap.ContainsKey(component.GetType()))
-            {
-                return options.ComponentEngineMap[component.GetType()];
-            }
-
-            foreach (var item in options.ComponentEngineMap)
-            {
-                var engine = item.Value;
-                if (engine.GetType().BaseType.GetGenericArguments()[0].IsAssignableFrom(component.GetType()))
+                foreach (var componentEngine in options.ComponentEngineList)
                 {
-                    return engine;
+                    if (componentEngine.GetType().BaseType.GetGenericArguments()[0].IsAssignableFrom(component.GetType()))
+                    {
+                        return componentEngine;
+                    }
                 }
+            }
+
+            if (typeof(BasicComponent).IsAssignableFrom(component.GetType()))
+            {
+                return basicComponentEngine;
             }
 
             return null;

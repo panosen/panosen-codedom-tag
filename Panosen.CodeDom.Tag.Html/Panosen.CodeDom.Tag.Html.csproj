@@ -4,7 +4,7 @@
     <TargetFrameworks>net472;netstandard2.0</TargetFrameworks>
     <AssemblyName>Panosen.CodeDom.Tag.Html</AssemblyName>
     <RootNamespace>Panosen.CodeDom.Tag.Html</RootNamespace>
-    <Version>0.2.5</Version>
+    <Version>0.3.0</Version>
     <Authors>harriszhang@live.cn</Authors>
     <Company>harriszhang@live.cn</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Panosen.CodeDom.Tag.Basic\Panosen.CodeDom.Tag.Basic.csproj" />
+    <ProjectReference Include="..\Panosen.CodeDom.Tag\Panosen.CodeDom.Tag.csproj" />
   </ItemGroup>
 
 </Project>

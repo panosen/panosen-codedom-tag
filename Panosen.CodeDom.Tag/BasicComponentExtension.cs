@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Panosen.CodeDom.Tag.Basic
+namespace Panosen.CodeDom.Tag
 {
     /// <summary>
     /// BasicComponentExtension

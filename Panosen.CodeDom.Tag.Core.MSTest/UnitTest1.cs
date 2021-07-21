@@ -1,6 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Panosen.CodeDom.Tag.Basic;
-using Panosen.CodeDom.Tag.Basic.Engine;
 using Panosen.CodeDom.Tag.Engine;
 using System;
 using System.Collections.Generic;
@@ -20,10 +18,7 @@ namespace Panosen.CodeDom.Tag.Core.MSTest
 
             var builder = new StringBuilder();
 
-            var options = new GenerateOptions()
-                .AddComponentEngine<BasicComponent>(new BasicComponentEngine());
-
-            new TagEngineCore().Generate(component, builder, options);
+            new TagEngineCore().Generate(component, builder);
 
             var actual = builder.ToString();
 
