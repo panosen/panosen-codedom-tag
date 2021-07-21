@@ -27,10 +27,6 @@ jobs:
       run: dotnet nuget push Panosen.CodeDom.Tag.Core/bin/Release/Panosen.CodeDom.Tag.Core.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.PANOSEN_NUGET_API_KEY}} --skip-duplicate
     - name: Publish Nuget Panosen.CodeDom.Tag.Engine
       run: dotnet nuget push Panosen.CodeDom.Tag.Engine/bin/Release/Panosen.CodeDom.Tag.Engine.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.PANOSEN_NUGET_API_KEY}} --skip-duplicate
-    - name: Publish Nuget Panosen.CodeDom.Tag.Basic
-      run: dotnet nuget push Panosen.CodeDom.Tag.Basic/bin/Release/Panosen.CodeDom.Tag.Basic.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.PANOSEN_NUGET_API_KEY}} --skip-duplicate
-    - name: Publish Nuget Panosen.CodeDom.Tag.Basic.Engine
-      run: dotnet nuget push Panosen.CodeDom.Tag.Basic.Engine/bin/Release/Panosen.CodeDom.Tag.Basic.Engine.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.PANOSEN_NUGET_API_KEY}} --skip-duplicate
     - name: Publish Nuget Panosen.CodeDom.Tag.Script
       run: dotnet nuget push Panosen.CodeDom.Tag.Script/bin/Release/Panosen.CodeDom.Tag.Script.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.PANOSEN_NUGET_API_KEY}} --skip-duplicate
     - name: Publish Nuget Panosen.CodeDom.Tag.Script.Engine
