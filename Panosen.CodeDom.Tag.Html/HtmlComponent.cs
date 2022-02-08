@@ -1,15 +1,22 @@
-﻿using Panosen.CodeDom.Tag;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Panosen.CodeDom.Tag;
 
 namespace Panosen.CodeDom.Tag.Html
 {
+
     /// <summary>
-    /// HtmlComponent
+    /// HtmlComponent  HTML 文档
     /// </summary>
     public class HtmlComponent : BasicComponent
     {
+
         /// <summary>
-        /// Name
+        /// html
         /// </summary>
         public override string Name { get; set; } = "html";
 

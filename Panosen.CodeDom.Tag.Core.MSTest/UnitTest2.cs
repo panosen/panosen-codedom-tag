@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Panosen.CodeDom.JavaScript;
 using Panosen.CodeDom.Tag.Engine;
-using Panosen.CodeDom.Tag.Script;
-using Panosen.CodeDom.Tag.Script.Engine;
+using Panosen.CodeDom.Tag.Html;
+using Panosen.CodeDom.Tag.Html.Engine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +22,7 @@ namespace Panosen.CodeDom.Tag.Core.MSTest
             var builder = new StringBuilder();
 
             var options = new GenerateOptions()
-                .AddComponentEngine(new ScriptComponentEngine());
+                .AddHtmlComponentEngine();
 
             new TagEngineCore().Generate(component, builder, options);
 
@@ -37,6 +37,7 @@ namespace Panosen.CodeDom.Tag.Core.MSTest
         {
             return @"<div>
     <p>this is a test.</p>
+    <img src=""assrc"" alt=""asalt"" />
     <script>
         console.log('ok')
     </script>
@@ -48,6 +49,8 @@ namespace Panosen.CodeDom.Tag.Core.MSTest
             var component = new BasicComponent();
 
             component.AddChild<BasicComponent>("p").SetContent("this is a test.");
+
+            component.AddChild<ImgComponent>().SetSrc("assrc").SetAlt("asalt");
 
             var scriptComponent = component.AddChild<ScriptComponent>();
             scriptComponent.CodeFile = PrepareJsCodeFile();

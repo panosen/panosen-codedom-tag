@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Panosen.CodeDom.Tag.Html
 {
+
     /// <summary>
-    /// pre
+    /// PreComponent 预格式文本
     /// </summary>
     public class PreComponent : HtmlComponent
     {
+
         /// <summary>
         /// pre
         /// </summary>

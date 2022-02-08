@@ -4,7 +4,7 @@
     <TargetFrameworks>net472;netstandard2.0</TargetFrameworks>
     <AssemblyName>Panosen.CodeDom.Tag.Script.Engine</AssemblyName>
     <RootNamespace>Panosen.CodeDom.Tag.Script.Engine</RootNamespace>
-    <Version>0.3.1</Version>
+    <Version>0.3.2</Version>
     <Authors>harriszhang@live.cn</Authors>
     <Company>harriszhang@live.cn</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -16,15 +16,6 @@
 
   <ItemGroup>
     <None Include="..\panosen.png" Pack="true" PackagePath="" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Panosen.CodeDom.JavaScript.Engine" Version="1.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Panosen.CodeDom.Tag.Engine\Panosen.CodeDom.Tag.Engine.csproj" />
-    <ProjectReference Include="..\Panosen.CodeDom.Tag.Script\Panosen.CodeDom.Tag.Script.csproj" />
   </ItemGroup>
 
 </Project>

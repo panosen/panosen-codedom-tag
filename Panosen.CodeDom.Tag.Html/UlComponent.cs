@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Panosen.CodeDom.Tag.Html
 {
+
     /// <summary>
-    /// UlComponent
+    /// UlComponent 无序列表
     /// </summary>
     public class UlComponent : HtmlComponent
     {
+
         /// <summary>
-        /// Name
+        /// ul
         /// </summary>
         public override string Name { get; set; } = "ul";
     }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Panosen.CodeDom.Tag.Html
 {
+
     /// <summary>
-    /// MetaComponent
+    /// MetaComponent 关于 HTML 文档的元信息
     /// </summary>
     public class MetaComponent : HtmlComponent
     {
+
         /// <summary>
-        /// Name
+        /// meta
         /// </summary>
         public override string Name { get; set; } = "meta";
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Panosen.CodeDom.Tag.Html
 {
+
     /// <summary>
-    /// BrComponent
+    /// BrComponent 简单的折行
     /// </summary>
     public class BrComponent : HtmlComponent
     {
+
         /// <summary>
-        /// Name
+        /// br
         /// </summary>
         public override string Name { get; set; } = "br";
 

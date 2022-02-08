@@ -15,8 +15,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Panosen.CodeDom.Tag.Core\Panosen.CodeDom.Tag.Core.csproj" />
+    <ProjectReference Include="..\Panosen.CodeDom.Tag.Html.Engine\Panosen.CodeDom.Tag.Html.Engine.csproj" />
     <ProjectReference Include="..\Panosen.CodeDom.Tag.Html\Panosen.CodeDom.Tag.Html.csproj" />
-    <ProjectReference Include="..\Panosen.CodeDom.Tag.Script.Engine\Panosen.CodeDom.Tag.Script.Engine.csproj" />
   </ItemGroup>
 
 </Project>

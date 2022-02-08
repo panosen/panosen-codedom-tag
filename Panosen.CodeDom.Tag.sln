@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31410.414
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Panosen.CodeDom.Tag", "Panosen.CodeDom.Tag\Panosen.CodeDom.Tag.csproj", "{4CC33D1F-DAF3-4CCE-BE3F-DB018A0C00A6}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Panosen.CodeDom.Tag.Core", "Panosen.CodeDom.Tag.Core\Panosen.CodeDom.Tag.Core.csproj", "{6619126E-E172-44E3-934B-19A7AA1944FF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Panosen.CodeDom.Tag.Core.MSTest", "Panosen.CodeDom.Tag.Core.MSTest\Panosen.CodeDom.Tag.Core.MSTest.csproj", "{A37DBFE5-AE12-498B-AC22-8C06BF87B27F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Panosen.CodeDom.Tag.Html.Engine", "Panosen.CodeDom.Tag.Html.Engine\Panosen.CodeDom.Tag.Html.Engine.csproj", "{374F9710-0D8C-4AFB-AB47-C24C955AD451}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{A37DBFE5-AE12-498B-AC22-8C06BF87B27F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A37DBFE5-AE12-498B-AC22-8C06BF87B27F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A37DBFE5-AE12-498B-AC22-8C06BF87B27F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{374F9710-0D8C-4AFB-AB47-C24C955AD451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{374F9710-0D8C-4AFB-AB47-C24C955AD451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{374F9710-0D8C-4AFB-AB47-C24C955AD451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{374F9710-0D8C-4AFB-AB47-C24C955AD451}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

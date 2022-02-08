@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Panosen.CodeDom.Tag.Html
 {
+
     /// <summary>
-    /// OptionComponent
+    /// OptionComponent 选择列表中的选项
     /// </summary>
     public class OptionComponent : HtmlComponent
     {
+
         /// <summary>
-        /// Name
+        /// option
         /// </summary>
         public override string Name { get; set; } = "option";
     }

@@ -2,7 +2,7 @@
 
 using Panosen.CodeDom.JavaScript;
 
-namespace Panosen.CodeDom.Tag.Script
+namespace Panosen.CodeDom.Tag.Html
 {
     /// <summary>
     /// script

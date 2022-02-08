@@ -4,7 +4,7 @@
     <TargetFrameworks>net472;netstandard2.0</TargetFrameworks>
     <AssemblyName>Panosen.CodeDom.Tag.Script</AssemblyName>
     <RootNamespace>Panosen.CodeDom.Tag.Script</RootNamespace>
-    <Version>0.3.1</Version>
+    <Version>0.3.2</Version>
     <Authors>harriszhang@live.cn</Authors>
     <Company>harriszhang@live.cn</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -16,14 +16,6 @@
 
   <ItemGroup>
     <None Include="..\panosen.png" Pack="true" PackagePath="" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Panosen.CodeDom.JavaScript" Version="1.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Panosen.CodeDom.Tag\Panosen.CodeDom.Tag.csproj" />
   </ItemGroup>
 
 </Project>

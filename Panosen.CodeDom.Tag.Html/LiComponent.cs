@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Panosen.CodeDom.Tag.Html
 {
+
     /// <summary>
-    /// LiComponent
+    /// LiComponent 列表的项目
     /// </summary>
     public class LiComponent : HtmlComponent
     {
+
         /// <summary>
-        /// Name
+        /// li
         /// </summary>
         public override string Name { get; set; } = "li";
     }

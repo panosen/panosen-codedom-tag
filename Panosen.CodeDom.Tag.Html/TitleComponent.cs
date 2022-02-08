@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Panosen.CodeDom.Tag.Html
 {
+
     /// <summary>
-    /// TitleComponent
+    /// TitleComponent 文档的标题
     /// </summary>
     public class TitleComponent : HtmlComponent
     {
+
         /// <summary>
-        /// Name
+        /// title
         /// </summary>
         public override string Name { get; set; } = "title";
     }

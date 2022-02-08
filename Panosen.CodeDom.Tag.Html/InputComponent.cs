@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Panosen.CodeDom.Tag.Html
 {
+
     /// <summary>
-    /// InputComponent
+    /// InputComponent 输入控件
     /// </summary>
     public class InputComponent : HtmlComponent
     {
+
         /// <summary>
-        /// Name
+        /// input
         /// </summary>
         public override string Name { get; set; } = "input";
 

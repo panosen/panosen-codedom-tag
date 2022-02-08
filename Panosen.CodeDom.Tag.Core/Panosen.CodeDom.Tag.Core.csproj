@@ -4,7 +4,7 @@
     <TargetFrameworks>net472;netstandard2.0</TargetFrameworks>
     <AssemblyName>Panosen.CodeDom.Tag.Core</AssemblyName>
     <RootNamespace>Panosen.CodeDom.Tag.Core</RootNamespace>
-    <Version>0.3.1</Version>
+    <Version>0.4.0</Version>
     <Authors>harriszhang@live.cn</Authors>
     <Company>harriszhang@live.cn</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
