@@ -15,11 +15,13 @@ namespace Panosen.CodeDom.Tag.Core
         /// <summary>
         /// Generate
         /// </summary>
-        /// <param name="component"></param>
-        /// <param name="codeWriter"></param>
-        /// <param name="options"></param>
         public void Generate(Component component, CodeWriter codeWriter, GenerateOptions options = null)
         {
+            if (component == null)
+            {
+                return;
+            }
+
             options = options ?? new GenerateOptions();
 
             var engine = options.GetComponentEngine(component);
@@ -34,33 +36,55 @@ namespace Panosen.CodeDom.Tag.Core
         /// <summary>
         /// Generate
         /// </summary>
-        /// <param name="components"></param>
-        /// <param name="codeWriter"></param>
-        /// <param name="options"></param>
         public void Generate(List<Component> components, CodeWriter codeWriter, GenerateOptions options = null)
         {
             if (components == null || components.Count == 0)
             {
                 return;
             }
+
             options = options ?? new GenerateOptions();
 
             for (int i = 0; i < components.Count; i++)
             {
                 var component = components[i];
 
-                var engine = options.GetComponentEngine(component);
-                if (engine == null)
-                {
-                    continue;
-                }
-
-                engine.Generate(component, codeWriter, options);
+                Generate(component, codeWriter, options);
                 if (i < components.Count - 1)
                 {
                     codeWriter.WriteLine();
                 }
             }
+        }
+
+        /// <summary>
+        /// Generate
+        /// </summary>
+        public void Generate(Component component, CodeWriter codeWriter, Action<GenerateOptions> action)
+        {
+            var options = new GenerateOptions();
+
+            if (action != null)
+            {
+                action(options);
+            }
+
+            Generate(component, codeWriter, options);
+        }
+
+        /// <summary>
+        /// Generate
+        /// </summary>
+        public void Generate(List<Component> components, CodeWriter codeWriter, Action<GenerateOptions> action)
+        {
+            var options = new GenerateOptions();
+
+            if (action != null)
+            {
+                action(options);
+            }
+
+            Generate(components, codeWriter, options);
         }
     }
 }
