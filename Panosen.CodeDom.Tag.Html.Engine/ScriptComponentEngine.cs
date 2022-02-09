@@ -59,7 +59,8 @@ namespace Panosen.CodeDom.Tag.Html.Engine
 
             new JavaScript.Engine.JsCodeEngine().GenerateFile(scriptComponent.CodeFile, codeWriter, new JavaScript.Engine.GenerateOptions
             {
-                IndentSize = options.IndentSize + 1
+                IndentSize = options.IndentSize + 1,
+                DataArrayItemBreakLine = true
             });
 
             codeWriter.Write(options.IndentString).Write(Marks.LESS_THAN).Write(Marks.SLASH).Write(scriptComponent.Name).Write(Marks.GREATER_THAN);
