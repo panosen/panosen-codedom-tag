@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// colgroup
         /// </summary>
-        public override string Name { get; set; } = "colgroup";
+        public override string Name { get; set; } = HtmlTagNames.Colgroup;
     }
 }

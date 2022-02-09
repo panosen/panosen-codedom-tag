@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// blockquote
         /// </summary>
-        public override string Name { get; set; } = "blockquote";
+        public override string Name { get; set; } = HtmlTagNames.Blockquote;
     }
 }

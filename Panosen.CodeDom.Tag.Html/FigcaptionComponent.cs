@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// figcaption
         /// </summary>
-        public override string Name { get; set; } = "figcaption";
+        public override string Name { get; set; } = HtmlTagNames.Figcaption;
     }
 }

@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// svg
         /// </summary>
-        public override string Name { get; set; } = "svg";
+        public override string Name { get; set; } = HtmlTagNames.Svg;
     }
 }

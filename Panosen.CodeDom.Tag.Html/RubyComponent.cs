@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// ruby
         /// </summary>
-        public override string Name { get; set; } = "ruby";
+        public override string Name { get; set; } = HtmlTagNames.Ruby;
     }
 }

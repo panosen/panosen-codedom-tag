@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// wbr
         /// </summary>
-        public override string Name { get; set; } = "wbr";
+        public override string Name { get; set; } = HtmlTagNames.Wbr;
     }
 }

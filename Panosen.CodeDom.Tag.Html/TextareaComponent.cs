@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// textarea
         /// </summary>
-        public override string Name { get; set; } = "textarea";
+        public override string Name { get; set; } = HtmlTagNames.Textarea;
     }
 }

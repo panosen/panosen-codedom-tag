@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// noscript
         /// </summary>
-        public override string Name { get; set; } = "noscript";
+        public override string Name { get; set; } = HtmlTagNames.Noscript;
     }
 }

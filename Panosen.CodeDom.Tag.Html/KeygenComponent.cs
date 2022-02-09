@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// keygen
         /// </summary>
-        public override string Name { get; set; } = "keygen";
+        public override string Name { get; set; } = HtmlTagNames.Keygen;
     }
 }

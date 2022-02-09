@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// canvas
         /// </summary>
-        public override string Name { get; set; } = "canvas";
+        public override string Name { get; set; } = HtmlTagNames.Canvas;
     }
 }

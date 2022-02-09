@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// audio
         /// </summary>
-        public override string Name { get; set; } = "audio";
+        public override string Name { get; set; } = HtmlTagNames.Audio;
     }
 }

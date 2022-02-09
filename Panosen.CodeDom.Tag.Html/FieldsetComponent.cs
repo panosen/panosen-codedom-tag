@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// fieldset
         /// </summary>
-        public override string Name { get; set; } = "fieldset";
+        public override string Name { get; set; } = HtmlTagNames.Fieldset;
     }
 }

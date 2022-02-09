@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// pre
         /// </summary>
-        public override string Name { get; set; } = "pre";
+        public override string Name { get; set; } = HtmlTagNames.Pre;
     }
 }

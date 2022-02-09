@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// abbr
         /// </summary>
-        public override string Name { get; set; } = "abbr";
+        public override string Name { get; set; } = HtmlTagNames.Abbr;
     }
 }

@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// video
         /// </summary>
-        public override string Name { get; set; } = "video";
+        public override string Name { get; set; } = HtmlTagNames.Video;
     }
 }

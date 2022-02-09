@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using Panosen.CodeDom.JavaScript;
 
@@ -12,7 +12,7 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// script
         /// </summary>
-        public override string Name { get; set; } = "script";
+        public override string Name { get; set; } = HtmlTagNames.Script;
 
         /// <summary>
         /// 内嵌脚本

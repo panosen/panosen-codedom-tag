@@ -16,7 +16,7 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// img
         /// </summary>
-        public override string Name { get; set; } = "img";
+        public override string Name { get; set; } = HtmlTagNames.Img;
 
         /// <summary>
         /// SelfClosing

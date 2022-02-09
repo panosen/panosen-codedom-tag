@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// iframe
         /// </summary>
-        public override string Name { get; set; } = "iframe";
+        public override string Name { get; set; } = HtmlTagNames.Iframe;
     }
 }

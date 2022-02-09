@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// progress
         /// </summary>
-        public override string Name { get; set; } = "progress";
+        public override string Name { get; set; } = HtmlTagNames.Progress;
     }
 }

@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// tfoot
         /// </summary>
-        public override string Name { get; set; } = "tfoot";
+        public override string Name { get; set; } = HtmlTagNames.Tfoot;
     }
 }

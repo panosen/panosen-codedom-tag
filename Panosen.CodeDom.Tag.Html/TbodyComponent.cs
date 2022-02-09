@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// tbody
         /// </summary>
-        public override string Name { get; set; } = "tbody";
+        public override string Name { get; set; } = HtmlTagNames.Tbody;
     }
 }

@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// footer
         /// </summary>
-        public override string Name { get; set; } = "footer";
+        public override string Name { get; set; } = HtmlTagNames.Footer;
     }
 }

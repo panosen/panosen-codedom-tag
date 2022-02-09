@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// dialog
         /// </summary>
-        public override string Name { get; set; } = "dialog";
+        public override string Name { get; set; } = HtmlTagNames.Dialog;
     }
 }

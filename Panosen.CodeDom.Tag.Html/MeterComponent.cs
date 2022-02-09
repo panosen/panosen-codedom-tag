@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// meter
         /// </summary>
-        public override string Name { get; set; } = "meter";
+        public override string Name { get; set; } = HtmlTagNames.Meter;
     }
 }

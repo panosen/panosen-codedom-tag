@@ -16,6 +16,6 @@ namespace Panosen.CodeDom.Tag.Html
         /// <summary>
         /// area
         /// </summary>
-        public override string Name { get; set; } = "area";
+        public override string Name { get; set; } = HtmlTagNames.Area;
     }
 }
