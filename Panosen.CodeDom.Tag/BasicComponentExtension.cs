@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Panosen.CodeDom.Tag
@@ -130,10 +131,10 @@ namespace Panosen.CodeDom.Tag
         /// <summary>
         /// 添加一批子节点
         /// </summary>
-        public static TBasicComponent AddChildren<TBasicComponent>(this TBasicComponent component, List<Component> components)
+        public static TBasicComponent AddChildren<TBasicComponent>(this TBasicComponent component, IEnumerable<Component> components)
             where TBasicComponent : BasicComponent
         {
-            if (components == null || components.Count == 0)
+            if (components == null || components.Count() == 0)
             {
                 return component;
             }
@@ -144,6 +145,27 @@ namespace Panosen.CodeDom.Tag
             }
 
             component.Children.AddRange(components);
+
+            return component;
+        }
+
+        /// <summary>
+        /// 添加一批子节点
+        /// </summary>
+        public static TBasicComponent AddChildren<TBasicComponent>(this TBasicComponent component, ComponentCollection componentCollection)
+            where TBasicComponent : BasicComponent
+        {
+            if (componentCollection == null || componentCollection.Components == null || componentCollection.Components.Count == 0)
+            {
+                return component;
+            }
+
+            if (component.Children == null)
+            {
+                component.Children = new List<Component>();
+            }
+
+            component.Children.AddRange(componentCollection.Components);
 
             return component;
         }
