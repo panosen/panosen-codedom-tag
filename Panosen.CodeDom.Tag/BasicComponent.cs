@@ -12,14 +12,34 @@ namespace Panosen.CodeDom.Tag
     public class BasicComponent : Component
     {
         /// <summary>
-        /// 在前面和后面插入空行
+        /// 在前面(外)和后面(外)插入空行
         /// </summary>
         public bool Margin { get; set; }
 
         /// <summary>
-        /// 在前面和后面插入空行
+        /// 在前面(外)插入空行
+        /// </summary>
+        public bool MarginTop { get; set; }
+
+        /// <summary>
+        /// 在后面(外)插入空行
+        /// </summary>
+        public bool MarginBottom { get; set; }
+
+        /// <summary>
+        /// 在前面(内)和后面(内)插入空行
         /// </summary>
         public bool Padding { get; set; }
+
+        /// <summary>
+        /// 在前面(内)插入空行
+        /// </summary>
+        public bool PaddingTop { get; set; }
+
+        /// <summary>
+        /// 在后面(内)插入空行
+        /// </summary>
+        public bool PaddingBottom { get; set; }
 
         /// <summary>
         /// 主体

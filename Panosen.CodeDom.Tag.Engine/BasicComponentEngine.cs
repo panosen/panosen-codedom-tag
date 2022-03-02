@@ -34,7 +34,7 @@ namespace Panosen.CodeDom.Tag.Engine
             var tagName = basicComponent.BuiltIn ? basicComponent.Name : basicComponent.Name.ToLowerCaseBreakLine();
 
             //在节点前面插入空行
-            if (basicComponent.Margin)
+            if (basicComponent.Margin || basicComponent.MarginTop)
             {
                 codeWriter.WriteLine();
             }
@@ -63,7 +63,7 @@ namespace Panosen.CodeDom.Tag.Engine
                 codeWriter.Write(Marks.WHITESPACE).Write(Marks.SLASH).Write(Marks.GREATER_THAN);
 
                 //在节点后面插入空行
-                if (basicComponent.Margin)
+                if (basicComponent.Margin || basicComponent.MarginBottom)
                 {
                     codeWriter.WriteLine();
                 }
@@ -74,7 +74,25 @@ namespace Panosen.CodeDom.Tag.Engine
             codeWriter.Write(Marks.GREATER_THAN);
 
             //<子节点>
-            GenerateChildren(basicComponent.Children, codeWriter, basicComponent.Padding, options);
+            {
+                if (basicComponent.Children != null && basicComponent.Children.Count > 0)
+                {
+                    if (basicComponent.Padding || basicComponent.PaddingTop)
+                    {
+                        codeWriter.WriteLine();
+                    }
+                }
+
+                GenerateChildren(basicComponent.Children, codeWriter, options);
+
+                if (basicComponent.Children != null && basicComponent.Children.Count > 0)
+                {
+                    if (basicComponent.Padding || basicComponent.PaddingBottom)
+                    {
+                        codeWriter.WriteLine();
+                    }
+                }
+            }
 
             //<内容>
             if (!string.IsNullOrEmpty(basicComponent.Content))
@@ -91,7 +109,7 @@ namespace Panosen.CodeDom.Tag.Engine
             codeWriter.Write(Marks.LESS_THAN).Write(Marks.SLASH).Write(tagName).Write(Marks.GREATER_THAN);
 
             //在节点后面插入空行
-            if (basicComponent.Margin)
+            if (basicComponent.Margin || basicComponent.MarginBottom)
             {
                 codeWriter.WriteLine();
             }
@@ -111,16 +129,11 @@ namespace Panosen.CodeDom.Tag.Engine
             codeWriter.Write(Marks.WHITESPACE).Write("class").Write(Marks.EQUAL).Write(Marks.DOUBLE_QUOTATION).Write(string.Join(Marks.WHITESPACE, basicComponent.CssClassSet)).Write(Marks.DOUBLE_QUOTATION);
         }
 
-        private void GenerateChildren(List<Component> components, CodeWriter codeWriter, bool padding, GenerateOptions options)
+        private void GenerateChildren(List<Component> components, CodeWriter codeWriter, GenerateOptions options)
         {
             if (components == null || components.Count <= 0)
             {
                 return;
-            }
-
-            if (padding)
-            {
-                codeWriter.WriteLine();
             }
 
             options.PushIndent();
@@ -137,11 +150,6 @@ namespace Panosen.CodeDom.Tag.Engine
                 engine.Generate(component, codeWriter, options);
             }
             options.PopIndent();
-
-            if (padding)
-            {
-                codeWriter.WriteLine();
-            }
         }
     }
 }

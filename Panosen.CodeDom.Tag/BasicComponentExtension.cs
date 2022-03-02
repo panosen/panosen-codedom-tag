@@ -26,12 +26,8 @@ namespace Panosen.CodeDom.Tag
         }
 
         /// <summary>
-        /// 在前面和后面插入空行
+        /// 在前面(外)和后面(外)插入空行
         /// </summary>
-        /// <typeparam name="TBasicComponent"></typeparam>
-        /// <param name="component"></param>
-        /// <param name="margin"></param>
-        /// <returns></returns>
         public static TBasicComponent SetMargin<TBasicComponent>(this TBasicComponent component, bool margin)
             where TBasicComponent : BasicComponent
         {
@@ -41,12 +37,30 @@ namespace Panosen.CodeDom.Tag
         }
 
         /// <summary>
-        /// 在前面和后面插入空行
+        /// 在前面(外)插入空行
         /// </summary>
-        /// <typeparam name="TBasicComponent"></typeparam>
-        /// <param name="component"></param>
-        /// <param name="padding"></param>
-        /// <returns></returns>
+        public static TBasicComponent SetMarginTop<TBasicComponent>(this TBasicComponent component, bool marginTop)
+            where TBasicComponent : BasicComponent
+        {
+            component.MarginTop = marginTop;
+
+            return component;
+        }
+
+        /// <summary>
+        /// 在后面(外)插入空行
+        /// </summary>
+        public static TBasicComponent SetMarginBottom<TBasicComponent>(this TBasicComponent component, bool marginBottom)
+            where TBasicComponent : BasicComponent
+        {
+            component.MarginBottom = marginBottom;
+
+            return component;
+        }
+
+        /// <summary>
+        /// 在前面(内)和后面(内)插入空行
+        /// </summary>
         public static TBasicComponent SetPadding<TBasicComponent>(this TBasicComponent component, bool padding)
             where TBasicComponent : BasicComponent
         {
@@ -54,6 +68,29 @@ namespace Panosen.CodeDom.Tag
 
             return component;
         }
+
+        /// <summary>
+        /// 在前面(内)插入空行
+        /// </summary>
+        public static TBasicComponent SetPaddingTop<TBasicComponent>(this TBasicComponent component, bool paddingTop)
+            where TBasicComponent : BasicComponent
+        {
+            component.PaddingTop = paddingTop;
+
+            return component;
+        }
+
+        /// <summary>
+        /// 在后面(内)插入空行
+        /// </summary>
+        public static TBasicComponent SetPaddingBotom<TBasicComponent>(this TBasicComponent component, bool paddingBottom)
+            where TBasicComponent : BasicComponent
+        {
+            component.PaddingBottom = paddingBottom;
+
+            return component;
+        }
+
 
         /// <summary>
         /// 设置Content
